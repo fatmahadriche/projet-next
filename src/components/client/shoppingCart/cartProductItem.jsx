@@ -18,7 +18,7 @@ const addToCart = (product) => {
 const target = {
 id:product._id,
 title: product.designation,
-image: product.imageart,
+image: product.imageprod,
 price : product.prix
 };
 addItem(target, { count: quantity }).then((()=>{
@@ -29,7 +29,7 @@ return (
 <article className="col-sm-3 mt-5">
 <div className="card">
 <img
-src={product?.imageart}
+src={product?.imageprod}
 className="card-img-top p-5"
 alt={product.designation}
 />

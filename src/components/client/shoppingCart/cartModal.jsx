@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useState } from "react";
 import { useShoppingCart } from "use-shopping-cart";
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -108,13 +108,11 @@ opacity duration-500 ${shouldDisplayCart ? "opacity-100 z-10" : "opacity-0"
                     </div>
                     {Object.values(cartDetails).map((item) => (
                         <div className="flex items-center gap-4 mb-3" key={item.id}>
-                            <p>
-                                <img
-                                    src={item.image}
-                                    width={60} height={60}
-                                    alt={item.title}
-                                />
-                            </p>
+                        {item.image ? (
+                                    <img src={item.image} width={60} height={60} alt={item.title} />
+                                ) : (
+                                    <span>No Image Available</span>
+                                )}
 
                             <div>
                                 {item.title} <span className="text-xs">({item.quantity})</span>

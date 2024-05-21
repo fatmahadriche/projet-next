@@ -24,7 +24,7 @@ const [designation, setDesignation] = useState("");
 const [prix, setPrix] = useState("");
 const [marque, setMarque] = useState("");
 const [qtestock, setQtestock] = useState("");
-const [imageart, setImageart] = useState("");
+const [imageprod, setImageprod] = useState("");
 const [scategorieID, setScategorieID] = useState("");
 const [validated, setValidated] = useState(false);
 
@@ -33,11 +33,11 @@ useEffect(() => {setReference(article.reference)
     setPrix(article.prix)
     setMarque(article.marque)
     setQtestock(article.qtestock)
-    setImageart(article.imageart)
+    setImageprod(article.imageprod)
     setScategorieID(article.scategorieID)
     setFiles( [
     {
-    source: article.imageart,
+    source: article.imageprod,
     options: { type: 'local' }
     }
     ])
@@ -54,7 +54,7 @@ useEffect(() => {setReference(article.reference)
     marque,
     prix,
     qtestock,
-    imageart,
+    imageprod,
     scategorieID
     }
     await editArticle(articleEdited)
@@ -91,7 +91,7 @@ useEffect(() => {setReference(article.reference)
         .then((response) => response.data)
         .then((data) => {
         console.log(data);
-        setImageart(data.url) ;
+        setImageprod(data.url) ;
         load(data);
         })
         .catch((error) => {

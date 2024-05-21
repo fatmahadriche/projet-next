@@ -27,10 +27,10 @@ const Listproducts = ({ produits }) => {
     const columns = useMemo(
         () => [
             {
-                accessorKey: 'imageart', //access nested data with dot notation
+                accessorKey: 'imageprod', //access nested data with dot notation
                 header: 'Image',
                 Cell: ({ cell }) => {
-                    console.log(cell.row.original.imageprod);
+                    console.log(cell.row);
                     return <Box
                     sx={{
                         display: 'flex',

@@ -1,4 +1,3 @@
-'use client'
 import AreaChartPlot from "./areaChartPlot";
 import AreaUsersList from "./areaUsersList";
 

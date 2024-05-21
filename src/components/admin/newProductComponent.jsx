@@ -24,7 +24,7 @@ const NewProduct = ({ scategories }) => {
     const [prix, setPrix] = useState("");
     const [marque, setMarque] = useState("");
     const [qtestock, setQtestock] = useState("");
-    const [imageart, setImageart] = useState("");
+    const [imageprod, setImageprod] = useState("");
     const [scategorieID, setScategorieID] = useState("");
     const [validated, setValidated] = useState(false);
     const handleSubmit = (e) => {
@@ -37,7 +37,7 @@ const NewProduct = ({ scategories }) => {
                 prix,
                 marque,
                 qtestock,
-                imageart,
+                imageprod,
                 scategorieID
             };
             //faire le add dans la BD
@@ -67,7 +67,7 @@ const NewProduct = ({ scategories }) => {
                     .then((response) => response.data)
                     .then((data) => {
                         console.log(data);
-                        setImageart(data.url);
+                        setImageprod(data.url);
                         load(data);
                     })
                     .catch((error) => {
@@ -182,8 +182,8 @@ const NewProduct = ({ scategories }) => {
                                     <Form.Control
                                         type="text"
                                         placeholder="Image"
-                                        value={imageart}
-                                        onChange={(e) => setImageart(e.target.value)}
+                                        value={imageprod}
+                                        onChange={(e) => setImageprod(e.target.value)}
                                     />
                                 </Form.Group>
                                 <Form.Group as={Col} md="12">
